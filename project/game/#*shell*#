@@ -1,0 +1,268 @@
+student@systems-vm:~/demo_projects/project2-game-room63/project/game> make clean
+rm -f *.o *.c~ *.c# *~ *.elf .h~
+student@systems-vm:~/demo_projects/project2-game-room63/project/game> make load
+msp430-elf-gcc -mmcu=msp430g2553 -I../h   -c -o game_main.o game_main.c
+game_main.c: In function 'main':
+game_main.c:12:3: warning: implicit declaration of function 'enableWDTInterrupt'; did you mean 'enableWDTInterrupts'? [-Wimplicit-function-declaration]
+   enableWDTInterrupt(); /* enable periodic interrupt */
+   ^~~~~~~~~~~~~~~~~~
+   enableWDTInterrupts
+msp430-elf-gcc -mmcu=msp430g2553 -I../h   -c -o stateMachines.o stateMachines.c
+In file included from stateMachines.c:6:
+sounds.h:10: warning: "C" redefined
+ #define C 30578.04741
+ 
+In file included from /opt/ti/msp430_gcc/include/msp430.h:1423,
+                 from stateMachines.c:1:
+/opt/ti/msp430_gcc/include/msp430g2553.h:93: note: this is the location of the previous definition
+ #define C                      (0x0001)
+ 
+stateMachines.c: In function 'sound':
+stateMachines.c:49:3: error: variable-sized object may not be initialized
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+   ^~~
+In file included from stateMachines.c:6:
+sounds.h:4:16: warning: excess elements in array initializer
+ #define Dsharp 51425.91197
+                ^~~~~~~~~~~
+stateMachines.c:49:22: note: in expansion of macro 'Dsharp'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                      ^~~~~~
+sounds.h:4:16: note: (near initialization for 'sound')
+ #define Dsharp 51425.91197
+                ^~~~~~~~~~~
+stateMachines.c:49:22: note: in expansion of macro 'Dsharp'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                      ^~~~~~
+sounds.h:5:11: warning: excess elements in array initializer
+ #define F 22907.6444
+           ^~~~~~~~~~
+stateMachines.c:49:30: note: in expansion of macro 'F'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                              ^
+sounds.h:5:11: note: (near initialization for 'sound')
+ #define F 22907.6444
+           ^~~~~~~~~~
+stateMachines.c:49:30: note: in expansion of macro 'F'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                              ^
+sounds.h:6:16: warning: excess elements in array initializer
+ #define Fsharp 43243.89775
+                ^~~~~~~~~~~
+stateMachines.c:49:33: note: in expansion of macro 'Fsharp'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                                 ^~~~~~
+sounds.h:6:16: note: (near initialization for 'sound')
+ #define Fsharp 43243.89775
+                ^~~~~~~~~~~
+stateMachines.c:49:33: note: in expansion of macro 'Fsharp'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                                 ^~~~~~
+sounds.h:7:16: warning: excess elements in array initializer
+ #define Gsharp 38535.9212
+                ^~~~~~~~~~
+stateMachines.c:49:41: note: in expansion of macro 'Gsharp'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                                         ^~~~~~
+sounds.h:7:16: note: (near initialization for 'sound')
+ #define Gsharp 38535.9212
+                ^~~~~~~~~~
+stateMachines.c:49:41: note: in expansion of macro 'Gsharp'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                                         ^~~~~~
+sounds.h:8:11: warning: excess elements in array initializer
+ #define A 72727.27273
+           ^~~~~~~~~~~
+stateMachines.c:49:49: note: in expansion of macro 'A'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                                                 ^
+sounds.h:8:11: note: (near initialization for 'sound')
+ #define A 72727.27273
+           ^~~~~~~~~~~
+stateMachines.c:49:49: note: in expansion of macro 'A'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                                                 ^
+sounds.h:9:11: warning: excess elements in array initializer
+ #define B 32396.32367
+           ^~~~~~~~~~~
+stateMachines.c:49:52: note: in expansion of macro 'B'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                                                    ^
+sounds.h:9:11: note: (near initialization for 'sound')
+ #define B 32396.32367
+           ^~~~~~~~~~~
+stateMachines.c:49:52: note: in expansion of macro 'B'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                                                    ^
+sounds.h:10:11: warning: excess elements in array initializer
+ #define C 30578.04741
+           ^~~~~~~~~~~
+stateMachines.c:49:55: note: in expansion of macro 'C'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                                                       ^
+sounds.h:10:11: note: (near initialization for 'sound')
+ #define C 30578.04741
+           ^~~~~~~~~~~
+stateMachines.c:49:55: note: in expansion of macro 'C'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                                                       ^
+sounds.h:11:11: warning: excess elements in array initializer
+ #define D 54483.88775
+           ^~~~~~~~~~~
+stateMachines.c:49:58: note: in expansion of macro 'D'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                                                          ^
+sounds.h:11:11: note: (near initialization for 'sound')
+ #define D 54483.88775
+           ^~~~~~~~~~~
+stateMachines.c:49:58: note: in expansion of macro 'D'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                                                          ^
+sounds.h:4:16: warning: excess elements in array initializer
+ #define Dsharp 51425.91197
+                ^~~~~~~~~~~
+stateMachines.c:49:61: note: in expansion of macro 'Dsharp'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                                                             ^~~~~~
+sounds.h:4:16: note: (near initialization for 'sound')
+ #define Dsharp 51425.91197
+                ^~~~~~~~~~~
+stateMachines.c:49:61: note: in expansion of macro 'Dsharp'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                                                             ^~~~~~
+make: *** [<builtin>: stateMachines.o] Error 1
+student@systems-vm:~/demo_projects/project2-game-room63/project/game> make clean
+rm -f *.o *.c~ *.c# *~ *.elf .h~
+student@systems-vm:~/demo_projects/project2-game-room63/project/game> make load
+msp430-elf-gcc -mmcu=msp430g2553 -I../h   -c -o game_main.o game_main.c
+game_main.c: In function 'main':
+game_main.c:12:3: warning: implicit declaration of function 'enableWDTInterrupt'; did you mean 'enableWDTInterrupts'? [-Wimplicit-function-declaration]
+   enableWDTInterrupt(); /* enable periodic interrupt */
+   ^~~~~~~~~~~~~~~~~~
+   enableWDTInterrupts
+msp430-elf-gcc -mmcu=msp430g2553 -I../h   -c -o stateMachines.o stateMachines.c
+In file included from stateMachines.c:6:
+sounds.h:10: warning: "C" redefined
+ #define C 30578
+ 
+In file included from /opt/ti/msp430_gcc/include/msp430.h:1423,
+                 from stateMachines.c:1:
+/opt/ti/msp430_gcc/include/msp430g2553.h:93: note: this is the location of the previous definition
+ #define C                      (0x0001)
+ 
+stateMachines.c: In function 'sound':
+stateMachines.c:49:3: error: variable-sized object may not be initialized
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+   ^~~
+In file included from stateMachines.c:6:
+sounds.h:4:16: warning: excess elements in array initializer
+ #define Dsharp 51425
+                ^~~~~
+stateMachines.c:49:22: note: in expansion of macro 'Dsharp'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                      ^~~~~~
+sounds.h:4:16: note: (near initialization for 'sound')
+ #define Dsharp 51425
+                ^~~~~
+stateMachines.c:49:22: note: in expansion of macro 'Dsharp'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                      ^~~~~~
+sounds.h:5:11: warning: excess elements in array initializer
+ #define F 22907
+           ^~~~~
+stateMachines.c:49:30: note: in expansion of macro 'F'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                              ^
+sounds.h:5:11: note: (near initialization for 'sound')
+ #define F 22907
+           ^~~~~
+stateMachines.c:49:30: note: in expansion of macro 'F'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                              ^
+sounds.h:6:16: warning: excess elements in array initializer
+ #define Fsharp 43243
+                ^~~~~
+stateMachines.c:49:33: note: in expansion of macro 'Fsharp'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                                 ^~~~~~
+sounds.h:6:16: note: (near initialization for 'sound')
+ #define Fsharp 43243
+                ^~~~~
+stateMachines.c:49:33: note: in expansion of macro 'Fsharp'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                                 ^~~~~~
+sounds.h:7:16: warning: excess elements in array initializer
+ #define Gsharp 38535
+                ^~~~~
+stateMachines.c:49:41: note: in expansion of macro 'Gsharp'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                                         ^~~~~~
+sounds.h:7:16: note: (near initialization for 'sound')
+ #define Gsharp 38535
+                ^~~~~
+stateMachines.c:49:41: note: in expansion of macro 'Gsharp'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                                         ^~~~~~
+sounds.h:8:11: warning: excess elements in array initializer
+ #define A 72727
+           ^~~~~
+stateMachines.c:49:49: note: in expansion of macro 'A'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                                                 ^
+sounds.h:8:11: note: (near initialization for 'sound')
+ #define A 72727
+           ^~~~~
+stateMachines.c:49:49: note: in expansion of macro 'A'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                                                 ^
+sounds.h:9:11: warning: excess elements in array initializer
+ #define B 32396
+           ^~~~~
+stateMachines.c:49:52: note: in expansion of macro 'B'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                                                    ^
+sounds.h:9:11: note: (near initialization for 'sound')
+ #define B 32396
+           ^~~~~
+stateMachines.c:49:52: note: in expansion of macro 'B'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                                                    ^
+sounds.h:10:11: warning: excess elements in array initializer
+ #define C 30578
+           ^~~~~
+stateMachines.c:49:55: note: in expansion of macro 'C'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                                                       ^
+sounds.h:10:11: note: (near initialization for 'sound')
+ #define C 30578
+           ^~~~~
+stateMachines.c:49:55: note: in expansion of macro 'C'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                                                       ^
+sounds.h:11:11: warning: excess elements in array initializer
+ #define D 54483
+           ^~~~~
+stateMachines.c:49:58: note: in expansion of macro 'D'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                                                          ^
+sounds.h:11:11: note: (near initialization for 'sound')
+ #define D 54483
+           ^~~~~
+stateMachines.c:49:58: note: in expansion of macro 'D'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                                                          ^
+sounds.h:4:16: warning: excess elements in array initializer
+ #define Dsharp 51425
+                ^~~~~
+stateMachines.c:49:61: note: in expansion of macro 'Dsharp'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                                                             ^~~~~~
+sounds.h:4:16: note: (near initialization for 'sound')
+ #define Dsharp 51425
+                ^~~~~
+stateMachines.c:49:61: note: in expansion of macro 'Dsharp'
+   int sound[size] = {Dsharp, F, Fsharp, Gsharp, A, B, C, D, Dsharp };
+                                                             ^~~~~~
+make: *** [<builtin>: stateMachines.o] Error 1
+student@systems-vm:~/demo_projects/project2-game-room63/project/game> sudo poweroff
+[sudo] password for root: 
