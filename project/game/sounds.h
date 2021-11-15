@@ -1,13 +1,17 @@
 #ifndef sounds_included
 #define sounds_included
 
-#define Dsharp 51425
-#define F 22907
-#define Fsharp 43243
-#define Gsharp 38535
-#define A 72727
-#define B 32396
-#define Cn 30578
-#define D 54483
+ 
+ /* notes that would make sound in the
+    state machine */
+
+#define Dsharp 5142
+#define F 2290
+#define Fsharp 4324
+#define Gsharp 3853
+#define A 7272
+#define B 3239
+#define Cn 3057
+#define D 5448
 
 #endif
