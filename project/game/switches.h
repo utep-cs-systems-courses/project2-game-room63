@@ -12,6 +12,6 @@ void switch_init();
 void switch_interrupt_handler();
 
 extern int pressB1,pressB2, pressB3, pressB4;
-extern int  pAgain, pAgain2, pAgain3, pAgain4; 
+extern int pAgain, pAgain2, pAgain3, pAgain4; 
 
 #endif // included
