@@ -2,7 +2,7 @@
 #include "stateMachines.h"
 #include "led.h"
 #include "buzzer.h"
-#include "switches"
+#include "switches.h"
 
 
 // variables to indicate times that button is push.
@@ -16,9 +16,10 @@ void
 __interrupt_vec(WDT_VECTOR) WDT(){	/* 250 interrupts/sec */
   static int  blink_count = 0;
 
-  bink_count++;
-  if ((blink_count%50) ==0 && pAgain ==1) {
+  blink_count++;
+  if ((blink_count % 50) == 0 && pAgain == 1) {
     led_update();
     sound();
   }
+  
 }
