@@ -1,6 +1,6 @@
 #include <msp430.h>
 #include "led.h"
-#include "switches"
+#include "switches.h"
 
 
 
@@ -9,7 +9,7 @@
 void Redlight(int on)
 {
   // 0 means off light 
-  if(on ==0)
+  if(on == 0)
     {
       P1OUT &= ~LED_RED;  //turn off red LED.
     }
@@ -25,11 +25,11 @@ void Greenlight(int on)
   // 0 means off light.
   if(on ==0)
     {
-      P1OUT &= ~LED_Green; // turn off green LED.
+      P1OUT &= ~LED_GREEN; // turn off green LED.
     }
   // else 1 on light.
   else if (on == 1){
-    P1OUT |= LED_Green;  //turn on gren LED.
+    P1OUT |= LED_GREEN;  //turn on gren LED.
    }
   }
   
@@ -44,7 +44,7 @@ void led_init()
 void led_update()
 {
   // Initialize LED as an off light.
-  P1OUT &= ~LEADS;
+  P1OUT &= ~LEDS;
 }
 
 
