@@ -9,7 +9,12 @@ void dim100r();
 void dim25g();
 void dim50g();
 void dim75g();
-void dim100g()
+void dim100g();
+
+void dim25gr();
+void dim50gr();
+void dim75gr();
+void dim100gr();
 
 void sound();
 
