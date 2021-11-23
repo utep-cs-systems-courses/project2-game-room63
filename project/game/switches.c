@@ -3,11 +3,12 @@
 #include "led.h"
 
 
-// variables for pressing button 1,2,3 and 4 from the msp430.  
-pressB1 =0;   // Pressing button 1.
-pressB2 =0;   // Pressing button 2.
-pressB3 =0;   // Pressing button 3.
-pressB4 =0;   // Pressing button 4.
+ // variables for pressing button 1,2,3 and 4 from the msp430.  
+ int pressB1 =0;   // Pressing button 1.
+ int pressB2 =0;   // Pressing button 2.
+ int pressB3 =0;   // Pressing button 3.
+ int pressB4 =0;   // Pressing button 4.
+
 
 static char 
 switch_update_interrupt_sense()
@@ -57,15 +58,15 @@ switch_interrupt_handler()
     pAgain2^= 1;
   
     pAgain = 0, pAgain3 = 0, pAgain4 = 0;
- }  // end of else-if statement. 
-else if(CHbutton3 !=  pressB3 && pressB3){
+  }  // end of else-if statement. 
+ else if(CHbutton3 !=  pressB3 && pressB3){
     pAgain3^= 1;
   
     pAgain = 0, pAgain2 = 0, pAgain4 = 0;
- } // end of else-if statement.
-else if(CHbutton4 !=  pressB4 && pressB4){
+  } // end of else-if statement.
+ else if(CHbutton4 !=  pressB4 && pressB4){
     pAgain4^= 1;
   
     pAgain = 0, pAgain2 = 0, pAgain3 = 0;
- } // end of else-if statement.
-}
+  } // end of else-if statement.
+ }
