@@ -4,46 +4,46 @@
 #include "buzzer.h"
 #include "switches.h"
 
-
 // variables to indicate times that button is push.
-   int pAgain = 0;
-   int pAgain2 = 0;
-   int pAgain3 = 0;
-   int pAgain4 = 0;
+int  pAgain = 0;
+int  pAgain2 = 0;
+int  pAgain3 = 0;
+int  pAgain4 = 0;
 
+void __interrupt_vec(WDT_VECTOR) WDT(){	/* 250 interrupts/sec */
 
-
-void
-__interrupt_vec(WDT_VECTOR) WDT(){	/* 250 interrupts/sec */
   static int  blink_count = 0;         /* counter of blink timeson the MSP-430 */
 
   blink_count++;
-  if ((blink_count % 250) == 0 && pAgain == 1) {
+  
+  if ((blink_count % 63) == 0 && pAgain == 1) {
     led_update();
-    sound();
+    sound();  // secuence of sounds.
+    blink_count = 0;
+    
   }
+  
   // state machine using the red LED.
-  else if ((blink_count % 500) == 0 && pAgain2 == 2){
+  else if ((blink_count % 125) == 0 && pAgain2 == 1){
     led_update();
-     dim25r();
-     dim50r();
-     dim75r();
-     dim100r();
+    dimR(); // switch statment for red light.
+    blink_count = 0;
   }
+  
   // state machine using gren LED.
-  else if ((blink_count % 750) == 0 && pAgain3 == 3){
+  else if ((blink_count % 188) == 0 && pAgain3 == 1){
     led_update();
-     dim25g();
-     dim50g();
-     dim75g();
-     dim100g();
+    dimG(); // switch statment for green light.
+    blink_count = 0;
   }
+
+ 
   // state machine combination of green and red LED.
-  else if ((blink_count % 1000) == 0 && pAgain == 4){
-    led_update();
-     dim25gr();
-     dim50gr();
-     dim75gr();
-     dim100gr();
+  else if ((blink_count % 250) == 0 && pAgain4 == 1){
+     led_update();
+     dimGR(); // switch statment for green and red light.
+     blink_count = 0;
   }
+
+  
 }
