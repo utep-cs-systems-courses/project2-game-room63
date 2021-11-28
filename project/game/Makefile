@@ -3,7 +3,8 @@ CPU            = msp430g2553
 CFLAGS         = -mmcu=${CPU} -I../h
 LDFLAGS	       = -L/opt/ti/msp430_gcc/include
 
-CC	       =	 msp430-elf-gcc
+
+CC	       = msp430-elf-gcc
 
 
 all: led.elf
@@ -14,14 +15,19 @@ led.elf: ${COMMON_OBJECTS} game_main.o stateMachines.o p2_interrupt_handler.o wd
 load: led.elf
 	msp430loader.sh led.elf
 
-
-
 clean:
 	 rm -f *.o *.c~ *.c# *~ *.elf .h~
 
-p2_interrupt_handler.o:		switches.h
-game_main.o:			led.h switches.h
-buzzer.o:			buzzer.h
-led.o:				led.h led.c
-wdInterrumptHandler.o: 		buzzer.h led.h stateMachines.h switches.h
-switches.o: 			switches.h led.h
+stateMachines.o: stateMachines.h buzzer.h sounds.h switches.h led.h
+
+p2_interrupt_handler.o:	switches.h
+
+game_main.o: led.h switches.h
+
+buzzer.o: buzzer.h
+
+led.o: led.c led.h 
+
+wdInterrumptHandler.o: buzzer.h led.h stateMachines.h switches.h
+
+switches.o: switches.h led.h
