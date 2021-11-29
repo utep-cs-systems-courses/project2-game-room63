@@ -5,18 +5,19 @@
 #include "switches.h"
 
 // variables to indicate times that button is push.
-int  pAgain = 0;
-int  pAgain2 = 0;
-int  pAgain3 = 0;
-int  pAgain4 = 0;
+     int pAgain = 0;
+     int pAgain2 = 0;
+     int pAgain3 = 0;
+     int pAgain4 = 0;
 
 void __interrupt_vec(WDT_VECTOR) WDT(){	/* 250 interrupts/sec */
 
   static int  blink_count = 0;         /* counter of blink timeson the MSP-430 */
 
   blink_count++;
-  
+  // blink_count % 63) == 0 && pAgain == 1
   if ((blink_count % 63) == 0 && pAgain == 1) {
+    buzzer_set_period(0); // turn of completly the sound of sound();
     led_update();
     sound();  // secuence of sounds.
     blink_count = 0;
