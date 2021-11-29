@@ -3,9 +3,6 @@
 #include "switches.h"
 
 
-
-
-
 void Redlight(int on)
 {
   // 0 means off light 
@@ -47,4 +44,14 @@ void led_update()
   P1OUT &= ~LEDS;
 }
 
-
+void led_on(int on)
+{
+  if( on == 0)
+    {
+     P1OUT &= ~LEDS;
+    }
+  else if ( on == 1)
+    {
+      P1OUT |= LEDS;
+    }
+}
