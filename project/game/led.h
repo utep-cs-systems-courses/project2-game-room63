@@ -6,11 +6,10 @@
 #define LEDS (BIT0 | BIT6)
 
 
-
-
 void led_init();
 void led_update();
 void Redlight( int on);
 void Greenlight(int on);
+void led_on(int on);
 
 #endif // included
