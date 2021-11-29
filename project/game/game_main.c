@@ -6,11 +6,12 @@
 
 int main (void)
 {
-  buzzer_init();
+  configureClocks();     /* setup master oscillator, CPU & peripheral clocks */
   led_init();
+  buzzer_init();
   switch_init();
   enableWDTInterrupts(); /* enable periodic interrupt */
-  configureClocks();     /* setup master oscillator, CPU & peripheral clocks */
+  
 
   or_sr(0x18);         /* CPU off, GIE on */
 }
