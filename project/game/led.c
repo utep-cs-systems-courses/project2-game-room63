@@ -46,12 +46,28 @@ void led_update()
 
 void led_on(int on)
 {
-  if( on == 0)
+  if( on == 0) // led off.
     {
      P1OUT &= ~LEDS;
+   
     }
   else if ( on == 1)
     {
-      P1OUT |= LEDS;
+      P1OUT |= LEDS; // led on.
+     
     }
+}
+
+// change colors between red and green.
+// the implementation is on stateMachines.c
+void changeC(int on)
+{
+  if(on == 0){
+    Redlight(1);
+    Greenlight(0);
+  }
+  else if ( on == 1){
+    Redlight(0);
+    Greenlight(1);
+  }
 }

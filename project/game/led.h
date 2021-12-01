@@ -11,5 +11,6 @@ void led_update();
 void Redlight( int on);
 void Greenlight(int on);
 void led_on(int on);
+void changeC(int on);
 
 #endif // included
