@@ -3,12 +3,11 @@
 #include "led.h"
 
 
- // variables for pressing button 1,2,3 and 4 from the msp430.  
+/* variables for pressing button 1,2,3 and 4 from the msp430.  
+ Pressing button 1, Pressing button 2, Pressing button 3.
+ Pressing button 4. */
+int pressB1, pressB2, pressB3, pressB4;
 
-int pressB1 =0;   // Pressing button 1.
-int pressB2 =0;   // Pressing button 2.
-int pressB3 =0;   // Pressing button 3.
-int pressB4 =0;   // Pressing button 4.
 
 static char 
 switch_update_interrupt_sense()
@@ -50,26 +49,26 @@ switch_interrupt_handler()
 
   if(CHbutton1 !=  pressB1 && pressB1){
     pAgain ^= 1; // on button.
-
+    
     //off butttons.
     pAgain2 = 0, pAgain3 = 0, pAgain4 = 0;
   
   } // enf of if statment.
- else if(CHbutton2 !=  pressB2 && pressB2){
-   pAgain2^= 1; // on button.
-
+  if(CHbutton2 !=  pressB2 && pressB2){
+    pAgain2^= 1; // on button.
+    
     //off buttons. 
     pAgain = 0, pAgain3 = 0, pAgain4 = 0;
   }  // end of else-if statement. 
- else if(CHbutton3 !=  pressB3 && pressB3){
-   pAgain3^= 1; // on button.
-
+  if(CHbutton3 !=  pressB3 && pressB3){
+    pAgain3^= 1; // on button.
+    
    // off buttons.
-    pAgain = 0, pAgain2 = 0, pAgain4 = 0;
+   pAgain = 0, pAgain2 = 0, pAgain4 = 0;
   } // end of else-if statement.
   
- else if(CHbutton4 !=  pressB4 && pressB4){
-   pAgain4^= 1; //on button.
+  if(CHbutton4 !=  pressB4 && pressB4){
+    pAgain4^= 1; //on button.
 
    // off buttons
     pAgain = 0, pAgain2 = 0, pAgain3 = 0;
