@@ -12,7 +12,7 @@ redSequence:
 	cmp #1, &redState
 	jl case_1 		;case 1 from redSecuence.
 	cmp #2, &redState
-	jl case_2 :		;case 2 from redSecuence.
+	jl case_2		;case 2 from redSecuence.
 	cmp #3, &redState
 	jl case_3 		;case 3 from red secuence.
 case_1:
@@ -24,7 +24,7 @@ case_2:
 	add #1, &redState
 	jmp out
 case_3:
-	call #dim575r
+	call #dim75r
 	mov #0, &redState
 	jmp out
 out:
