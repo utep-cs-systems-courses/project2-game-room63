@@ -5,7 +5,6 @@
  void dim25r();
  void dim50r();
  void dim75r();
- void dimR(); // switch statement of red light.
 
  // Green LED.
  void dim25g();
@@ -18,8 +17,13 @@
  void dim75gr();
  void dimGR(); // switch statement of green and red light.
 
+//
+void redSequence();
 
  // Secuence of sounds.
-void sound(); 
+void sound();
+void sound2();
+
 
 #endif // included
+
