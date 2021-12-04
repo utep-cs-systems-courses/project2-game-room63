@@ -1,6 +1,7 @@
-/*  stateMachines.c hold 3 state machines
-the first three are light pattern and the
-fourth one is making a secuence of sound */
+/*  stateMachines.c hold 2 sound sequences
+the first one is 9 notes and the secound one
+is the same one but backwards, and then the ligh
+secuence with green and red light */
 
 #include <msp430.h>
 #include "stateMachines.h" 
@@ -9,16 +10,15 @@ fourth one is making a secuence of sound */
 #include "buzzer.h"
 #include "sounds.h"  // sound.h has the defined notes for make a sound secuence.
 
-static int stateR = 0; // state red.
-static int stateG = 0; // state green.
-static int stateGR = 0; // state green & red.
+int stateR = 1; // state red.
+int stateG = 1; // state green.
 
 
   // state machine for the secuence of the red light.
   void dim25r() {
     /* Switch statment to dimming the red LED 25%
      stateR stands for state Red*/
-
+    
     switch(stateR){
 
     case 1:
@@ -31,7 +31,7 @@ static int stateGR = 0; // state green & red.
       break;     // red LED is off until the break.
     case 4:
       Redlight(1); // red LED on.
-      stateR = 0;       
+      stateR = 1;      
       break;
     default:
       break;
@@ -58,8 +58,7 @@ static int stateGR = 0; // state green & red.
       break;
     case 4:
       Redlight(1); // red LED on.
-      stateR = 0;
-      break;
+      stateR = 1;
     default:
       break;
     }
@@ -83,7 +82,7 @@ static int stateGR = 0; // state green & red.
       break;
     case 4:
       Redlight(1); // red LED is on.
-      stateR = 0;
+      stateR = 1;
       break;
     default:
       break;
@@ -107,14 +106,13 @@ static int stateGR = 0; // state green & red.
       break;
     case 4:
       Greenlight(1);  // green led on.
-      stateG = 0;
+      stateG = 1;
       break;
     default:
       break;
     }
     
   }
-
 
   void dim50g() {
      /* Switch statment to dimming the green LED 50%
@@ -135,8 +133,7 @@ static int stateGR = 0; // state green & red.
       break;
     case 4:
       Greenlight(1); // green led on.
-      stateG = 0;
-      break;
+      stateG = 1;
     default:
       break;
     }
@@ -159,136 +156,13 @@ static int stateGR = 0; // state green & red.
       stateG++;
       break;
     case 4:
-      Greenlight(1); // red led on.
-      stateG = 0;
+      Greenlight(1); // green led on.
+      stateG = 1;
       break;
     default:
       break;
     }
   }
-
-// Switch statement to call the secuence of the green light.
-void dimG (){
-  static int dimGS = 0;
-  switch (dimGS){
-  case 1:
-    dim25g();
-    dimGS++;
-    break;
-
-    
-  case 2:
-    dim50g();
-    dimGS++;
-    break;
-
-  case 3:
-    dim75g();
-    dimGS = 0;
-    break;
-  default:
-    break;
-  }
-}
-
-
-   // state machine for combination lights green and red.
-  void dim25gr() {
-
-    
-    switch(stateGR){
-
-    case 1:
-      changeC(0);  
-      stateGR++;
-    case 2:
-      stateGR++;
-    case 3:
-      stateGR++;
-      break;
-    case 4:
-      changeC(1); 
-      stateGR = 0;
-      break;
-    default:
-      break;
-    }
-    
-  }
-
-
-  void dim50gr() {
-
-    switch(stateGR){
-
-    case 1:
-      changeC(1);  
-      stateGR++;
-      break;
-    case 2:
-      changeC(0); 
-      stateGR++;
-      break;
-    case 3:
-      stateGR++;
-      break;
-    case 4:
-      changeC(1); 
-      stateGR = 0;
-      break;
-    default:
-      break;
-    }
-
-  }
-
-  void dim75gr() {
-
-    switch(stateGR){
-
-    case 1:
-      changeC(0);
-      stateGR++;
-      break;
-    case 2:
-      stateGR++;
-      break;
-    case 3:
-      stateGR++;
-      break;
-    case 4:
-      changeC(1);
-      stateGR = 0;
-      break;
-    default:
-      break;
-    }
-  }
-
-// Switch statement to call the secuence of the green and red light.
-void dimGR (){
-  static int dimGRS = 0;
-
-  switch (dimGRS){
-  case 1:
-    dim25gr();
-    dimGRS++;
-    break;
-
-  case 2:
-    dim50gr();
-    dimGRS++;
-    break;
-
-  case 3:
-    dim75gr();
-    dimGRS = 0;
-    break;
-  default:
-    break;
-  }
-}  
-
 
   // state machine for the sound secuence.
   void sound(){
@@ -329,8 +203,5 @@ void dimGR (){
   else{
     Csound = 0; // Set current sound to 0.
   }
-
-
-
-  
+ 
 }
