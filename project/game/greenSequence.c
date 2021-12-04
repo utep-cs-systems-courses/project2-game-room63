@@ -21,7 +21,6 @@ void greenSequence(){
     break;
   default:
     break;
-
     
   }
 }
