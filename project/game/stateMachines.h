@@ -11,18 +11,14 @@
  void dim50g();
  void dim75g();
  void dimG();// switch statement of green light.
- // Combination of Green and Red LED.
- void dim25gr();
- void dim50gr();
- void dim75gr();
- void dimGR(); // switch statement of green and red light.
 
-//
+// external switch statements to call dimming sequences.
 void redSequence();
+void greenSequence();
 
  // Secuence of sounds.
-void sound();
-void sound2();
+void sound(); // normal sond sequence.
+void sound2(); // backward sound sequence.
 
 
 #endif // included
