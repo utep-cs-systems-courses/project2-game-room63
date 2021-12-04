@@ -1,26 +1,23 @@
 #include "led.h"
 #include "stateMachines.h"
-
-
+int  Redstate = 1;
 void redSequence(){
-  
-  static int redState = 0;
 
-  switch (redState) {
+  switch (Redstate) {
     
   case 1:
     dim25r(); // dimming red light 25%
-    redState++;
+    Redstate++;
     break;
      
   case 2:
     dim50r(); // dimming red light 50%
-    redState++;
+    Redstate++;
     break;
       
   case 3:
     dim75r(); // dimming red light 75%
-    redState = 0;
+    Redstate = 1;
     break;
   default:
     break;
