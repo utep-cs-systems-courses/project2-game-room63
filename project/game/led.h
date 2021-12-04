@@ -1,8 +1,10 @@
 #ifndef led_included
 #define led_included
 
-#define LED_RED BIT0               // P1.0
-#define LED_GREEN BIT6             // P1.6
+//Major bug fixing with lights since
+//The old version of MSP430 have the ports like that.
+#define LED_RED BIT6               // P6.0
+#define LED_GREEN BIT0             // P0.6
 #define LEDS (BIT0 | BIT6)
 
 
